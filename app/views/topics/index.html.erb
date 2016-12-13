@@ -1,0 +1,5 @@
+
+<% @topics.each do |topic|%>
+  <p><%= topic.title%></p>
+  <p>published <%=time_ago_in_words(topic.created_at)%> ago</p>
+<% end %>
