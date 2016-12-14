@@ -1,7 +1,1 @@
-
-<% @topics.each do |topic|%>
-  <p>Topic title: <%= topic.title%></p>
-  <p>published <%=time_ago_in_words(topic.created_at)%> ago</p>
-  <p>Node name: <%= topic.node.name%></p>
-  <hr>
-<% end %>
+<%= render "shared/topic_list", topics: @topics %>
