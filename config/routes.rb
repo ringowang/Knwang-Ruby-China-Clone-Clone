@@ -5,4 +5,6 @@
   resources :nodes, only: [:show]
   resources :users, only: [:show, :create]
   get 'sign_up', to: 'users#new'
+  get 'sign_in', to: 'sessions#new'
+  resources :sessions, only: [:create]
 end
