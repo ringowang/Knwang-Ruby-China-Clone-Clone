@@ -1,0 +1,10 @@
+<%= form_for @user do |f| %>
+  <h2>注册</h2>
+  用户名:
+  <%= f.text_field :name %>
+  <br>
+  邮箱:
+  <%= f.text_field :email %>
+  <br>
+  <%= f.submit "注册" %>
+<% end %>
