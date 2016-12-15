@@ -1,6 +1,7 @@
   <% topics.each do |topic|%>
-    <p><%= topic.title%></p>
-    <p>published <%=time_ago_in_words(topic.created_at)%> ago</p>
-    <p><%= link_to topic.node.name, node_path(topic.node.id)%></p>
+    <p><%= topic.title %></p>
+    <p>published <%= time_ago_in_words(topic.created_at) %> ago</p>
+    <p><%= link_to topic.node.name, node_path(topic.node.id) %></p>
+    <p><%= link_to topic.user.name, user_path(topic.user.id) %><p>
     <hr>
   <% end %>
