@@ -10,3 +10,8 @@
   <p>by <%= reply.user.name %>
   <p>评论时间:<%= time_ago_in_words(reply.created_at) %>之前<p>
 <% end %>
+
+<%= form_for [@topic, @reply] do |f| %>
+  <%= f.text_area :content, rows: 4 %>
+  <%= f.submit "提交回复" %>
+<% end %>
