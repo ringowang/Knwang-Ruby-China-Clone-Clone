@@ -2,3 +2,10 @@
 <p>published <%=time_ago_in_words(@topic.created_at)%> ago</p>
 <p><%= link_to @topic.node.name, node_path(@topic.node.id)%></p>
 <p><%= @topic.content%></p>
+<p>共收到<%= @topic.replies.count %> 条回复<p>
+
+<% @topic.replies.each do |reply| %>
+  <hr>
+  <%= reply.content %>
+  <p>评论时间:<%= time_ago_in_words(reply.created_at) %>之前<p>
+<% end %>
