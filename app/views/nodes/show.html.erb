@@ -1,4 +1,5 @@
 <h1><%= @node.name %></h1>
+<h1><%= @node.id %></h1>
 <p>共有<%= @node.topics.count %>个讨论主题<p>
 <h2><%= @node.description %></h2>
 <%= render "shared/topic_list", topics: @node.topics %>
