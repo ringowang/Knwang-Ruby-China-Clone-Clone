@@ -2,6 +2,9 @@
     <p><%= link_to topic.title, topic_path(topic.id) %></p>
     <p>published <%= time_ago_in_words(topic.created_at) %> ago</p>
     <p><%= link_to topic.node.name, node_path(topic.node.id) %></p>
-    <p><%= link_to topic.user.name, user_path(topic.user.id) %><p>
+    <p>发布者:<%= link_to topic.user.name, user_path(topic.user.id) %><p>
+    <% if topic.replies.last %>
+     <p>最新回复者:<%= link_to topic.replies.last.user.name,user_path(topic.replies.last.user_id) %><p>
+    <% end %>
     <hr>
   <% end %>

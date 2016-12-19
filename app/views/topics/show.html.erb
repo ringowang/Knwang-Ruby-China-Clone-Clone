@@ -7,5 +7,6 @@
 <% @topic.replies.each do |reply| %>
   <hr>
   <%= reply.content %>
+  <p>by <%= reply.user.name %>
   <p>评论时间:<%= time_ago_in_words(reply.created_at) %>之前<p>
 <% end %>
